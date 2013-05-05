@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="first_preferencescreen"
+    android:title="@string/preferences_title" >
+
+    <PreferenceScreen
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher"
+        android:key="nxt_prefs"
+        android:title="@string/prefs_nxtslave" >
+        <EditTextPreference
+            android:name="@string/prefs_nxtslave_editBrickName"
+            android:defaultValue="NXT"
+            android:icon="@drawable/ic_nxt_brick"
+            android:key="editBrickName"
+            android:title="@string/prefs_nxtslave_editBrickName_title" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/listMotorArray"
+            android:entryValues="@array/listMotorValues"
+            android:icon="@drawable/ic_nxt_motor"
+            android:key="motorLeft"
+            android:title="@string/prefs_nxtslave_motorLeft_title" />
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/listMotorArray"
+            android:entryValues="@array/listMotorValues"
+            android:icon="@drawable/ic_nxt_motor"
+            android:key="motorRight"
+            android:title="@string/prefs_nxtslave_motorRight_title" />
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/listSensorArray"
+            android:entryValues="@array/listSensorValues"
+            android:icon="@drawable/ic_nxt_ultra"
+            android:key="volumetricSensorLeft"
+            android:title="@string/prefs_nxtslave_volumetricSensorLeft_title" />
+        <ListPreference
+            android:defaultValue="4"
+            android:entries="@array/listSensorArray"
+            android:entryValues="@array/listSensorValues"
+            android:icon="@drawable/ic_nxt_ultra"
+            android:key="volumetricSensorRight"
+            android:title="@string/prefs_nxtslave_volumetricSensorRight_title" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/listSensorArray"
+            android:entryValues="@array/listSensorValues"
+            android:icon="@drawable/ic_nxt_ultra"
+            android:key="volumetricSensorFront"
+            android:title="@string/prefs_nxtslave_volumetricSensorFront_title" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/listSensorArray"
+            android:entryValues="@array/listSensorValues"
+            android:icon="@drawable/ic_nxt_touch"
+            android:key="touchSensor"
+            android:title="@string/prefs_nxtslave_touchSensor_title" />
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/listSensorArray"
+            android:entryValues="@array/listSensorValues"
+            android:icon="@drawable/ic_nxt_color"
+            android:key="colorSensor"
+            android:title="@string/prefs_nxtslave_colorSensor_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="nxtBrake"
+            android:summary="@string/prefs_nxtslave_nxtBrake_summary"
+            android:title="@string/prefs_nxtslave_nxtBrake_title" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/listMotorDirectionArray"
+            android:entryValues="@array/listMotorDirectionValues"
+            android:key="nxtMotorDirection"
+            android:title="@string/prefs_nxtslave_nxtMotorDirection_title" />
+
+        <net.jpralves.nxt.SeekBarPreference
+            android:defaultValue="300"
+            android:dialogMessage="@string/prefs_nxtslave_nxtSpeed_dialog"
+            android:key="nxtSpeed"
+            android:max="900"
+            android:text="@string/prefs_nxtslave_nxtSpeed_text"
+            android:title="@string/prefs_nxtslave_nxtSpeed_title" />
+        <net.jpralves.nxt.SeekBarPreference
+            android:defaultValue="20"
+            android:dialogMessage="@string/prefs_nxtslave_nxtMinDistance_dialog"
+            android:key="nxtMinDistance"
+            android:max="200"
+            android:text="@string/prefs_nxtslave_nxtMinDistance_text"
+            android:title="@string/prefs_nxtslave_nxtMinDistance_title" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:enabled="true"
+        android:icon="@drawable/i_network"
+        android:key="webserver_prefs"
+        android:title="@string/prefs_webserver" >
+        <EditTextPreference
+            android:name="@string/prefs_webserver_webserverPort"
+            android:defaultValue="8080"
+            android:inputType="number"
+            android:key="webserverPort"
+            android:title="@string/prefs_webserver_webserverPort_title" />
+        <EditTextPreference
+            android:name="@string/prefs_webserver_webserverNATPort"
+            android:defaultValue="0"
+            android:inputType="number"
+            android:key="webserverNATPort"
+            android:title="@string/prefs_webserver_webserverNATPort_title" />
+        <EditTextPreference
+            android:name="@string/prefs_webserver_webserverPassword"
+            android:defaultValue="nxtcontroller"
+            android:key="webserverPassword"
+            android:title="@string/prefs_webserver_webserverPassword_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="isVideoEnabled"
+            android:summary="@string/prefs_webserver_isVideoEnabled_summary"
+            android:title="@string/prefs_webserver_isVideoEnabled_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="isVideoCaptureEnabled"
+            android:summary="@string/prefs_webserver_isVideoCaptureEnabled_summary"
+            android:title="@string/prefs_webserver_isVideoCaptureEnabled_title" />
+
+        <net.jpralves.nxt.SeekBarPreference
+            android:defaultValue="40"
+            android:dialogMessage="@string/prefs_webserver_jpegCompression_dialog"
+            android:key="jpegCompression"
+            android:max="100"
+            android:text=" %"
+            android:title="@string/prefs_webserver_jpegCompression_title" />
+
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/listNXTBrowserLayout"
+            android:entryValues="@array/listNXTBrowserValues"
+            android:key="nxtBrowserVersion"
+            android:title="@string/prefs_webserver_nxtBrowserVersion_title" />
+
+        <net.jpralves.nxt.SeekBarPreference
+            android:defaultValue="500"
+            android:dialogMessage="@string/prefs_webserver_browserRefreshRate_dialog"
+            android:key="browserRefreshRate"
+            android:max="1000"
+            android:text=" ms"
+            android:title="@string/prefs_webserver_browserRefreshRate_title" />
+
+        <EditTextPreference
+            android:name="@string/prefs_webserver_pubSiteAddress"
+            android:defaultValue="@string/pubSite"
+            android:key="pubSiteAddress"
+            android:title="@string/prefs_webserver_pubSiteAddress_title" />
+        <EditTextPreference
+            android:name="@string/prefs_webserver_pubsiteKey"
+            android:defaultValue="171bc7518d5591dcc1b509b303a5fe3b"
+            android:key="pubsiteKey"
+            android:title="@string/prefs_webserver_pubsiteKey_title" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:enabled="true"
+        android:icon="@drawable/i_system"
+        android:key="general_prefs"
+        android:title="@string/prefs_general" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="isSplashEnabled"
+            android:summary="@string/prefs_general_isSplashEnabled_summary"
+            android:title="@string/prefs_general_isSplashEnabled_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="androidButtons"
+            android:summary="@string/prefs_general_androidButtons_summary"
+            android:title="@string/prefs_general_androidButtons_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="textToSpeech"
+            android:summary="@string/prefs_general_textToSpeech_summary"
+            android:title="@string/prefs_general_textToSpeech_title" />
+
+        <ListPreference
+            android:defaultValue=""
+            android:entries="@array/listLocaleLayout"
+            android:entryValues="@array/listLocaleValues"
+            android:key="locale"
+            android:title="@string/prefs_general_locale_title" />
+    </PreferenceScreen>
+
+</PreferenceScreen>

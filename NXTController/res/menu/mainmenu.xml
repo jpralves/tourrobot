@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/prefsMenu"
+        android:alphabeticShortcut="&apos;c&apos;"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:numericShortcut="1"
+        android:showAsAction="ifRoom"
+        android:title="@string/title_activity_preferences"/>
+    <item
+        android:id="@+id/diagsMenu"
+        android:alphabeticShortcut="&apos;d&apos;"
+        android:icon="@android:drawable/ic_menu_view"
+        android:numericShortcut="2"
+        android:showAsAction="ifRoom"
+        android:title="@string/title_activity_diagnostics"/>
+    <item
+        android:id="@+id/fsbrowserMenu"
+        android:alphabeticShortcut="&apos;f&apos;"
+        android:icon="@drawable/ic_menu_archive"
+        android:numericShortcut="4"
+        android:showAsAction="ifRoom"
+        android:title="@string/title_activity_fsbrowser"/>
+    <item
+        android:id="@+id/aboutMenu"
+        android:alphabeticShortcut="&apos;a&apos;"
+        android:icon="@android:drawable/ic_menu_help"
+        android:numericShortcut="3"
+        android:showAsAction="always"
+        android:title="@string/title_activity_about"/>
+
+</menu>

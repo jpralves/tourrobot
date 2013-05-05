@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+   <property file="local.properties" />
+   <property environment="env" />
+    <condition property="sdk.dir" value="${env.ANDROID_HOME}">
+        <isset property="env.ANDROID_HOME" />
+    </condition>
+
+    <target name="javadoc">
+        <javadoc access="private" additionalparam=" -linkoffline http://developer.android.com/reference file:${sdk.dir}/docs/reference" author="true" classpath="libs/pccomm.jar;${sdk.dir}/platforms/android-17/android.jar" destdir="doc" doctitle="LegoRobot Documentation" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="net.jpralves.nxt,lejos.pc.comm" source="1.5" sourcepath="src:gen" splitindex="true" use="true" version="true" linkoffline="http://d.android.com/reference ${sdk.dir}/docs/reference"  stylesheetfile="${sdk.dir}/docs/assets/android-developer-docs.css">
+            <link href="file:/opt/android-sdk-linux/docs/reference"/>
+            <link href="file:/home/jpalves/git/tourrobot/NXTController/doc/"/>
+<!--	    <link offline="true" href="http://d.android.com/reference" packagelistLoc="${sdk.dir}/docs/reference"/> -->
+        </javadoc>
+    </target>
+</project>

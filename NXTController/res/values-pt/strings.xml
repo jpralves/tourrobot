@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="main_text">Versão Protótipo</string>
+    <string name="app_name">NXTController</string>
+    <string name="configMenu">Configuração</string>
+    <string name="title_activity_about">Acerca</string>
+    <string name="title_activity_diagnostics">Diagnósticos</string>
+    <string name="title_activity_preferences">Preferências</string>
+    <string name="title_activity_fsbrowser">Navegador de Ficheiros</string>
+    <string name="diagnostics">Diagnósticos</string>
+    <string name="diag_prompt">Diagnósticos</string>
+    <string name="nodata">Sem dados</string>
+    <string name="credits">Creditos</string>
+    <string name="msg_loading">Carregando</string>
+    <string name="msg_setup_nxt">Configuração NXT</string>
+    <string name="msg_setup_webserver">Configuração Servidor Web</string>
+    <string name="msg_finishing">A Terminar</string>
+    <string name="msg_disable_nxt">Desabilitar NXT</string>
+    <string name="msg_disable_webserver">Desabilitar Servidor Web</string>
+    <string name="disconnected">Desligado</string>
+    <string name="no_network">Rede não detectada.</string>
+
+    <string-array name="diags_array">
+        <item>Sistema</item>
+        <item>Bateria</item>
+        <item>Rede</item>
+        <item>Bluetooth</item>
+        <item>Sensores</item>
+        <item>Camara</item>
+        <item>Armazenamento</item>
+        <item>Pacotes</item>
+        <item>Volátil</item>
+        <item>Redes Sem Fio</item>
+        <item>Preferências</item>
+        <item>Permissões</item>
+        <item>Criar HTML</item>
+    </string-array>
+
+    <array name="diags_array_icon">
+        <item>@drawable/i_system</item>
+        <item>@drawable/i_battery</item>
+        <item>@drawable/i_network</item>
+        <item>@drawable/i_bluetooth</item>
+        <item>@drawable/i_sensors</item>
+        <item>@drawable/i_camera</item>
+        <item>@drawable/i_storage</item>
+        <item>@drawable/i_packages</item>
+        <item>@drawable/i_volatile</item>
+        <item>@drawable/i_wifi</item>
+        <item>@drawable/i_preferences</item>
+        <item>@drawable/i_permissions</item>
+        <item>@drawable/i_createhtml</item>
+    </array>
+
+    <string-array name="diags_title_array">
+        <item>Detalhes Sistema</item>
+        <item>Detalhes Bateria</item>
+        <item>Detalhes Redes</item>
+        <item>Detalhes Bluetooth</item>
+        <item>Detalhes Sensores</item>
+        <item>Detalhes Camara</item>
+        <item>Detalhes Armazenamento</item>
+        <item>Detalhes Pacotes</item>
+        <item>Detalhes Dados Voláteis</item>
+        <item>Detalhes Redes Sem Fio</item>
+        <item>Detalhes Preferências</item>
+        <item>Detalhes Permissões</item>
+        <item>Relatório HTML</item>
+    </string-array>
+
+    <string name="nxtrobot">Robô NXT</string>
+    <string name="nxt">NXT</string>
+    <string name="webserver">Servidor Web</string>
+    <string name="exittitle">Sair</string>
+    <string name="exitprompt">tem a certeza que quer sair?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="cancel">Cancelar</string>
+    <string name="disable_bluetooth">Desabilitando Bluetooth</string>
+    <string name="gotourl">"Ir para "</string>
+    <string name="mainConnect">Ligar</string>
+    <string name="mainDisconnect">Desligar</string>
+    <string name="sendTo">Enviar ficheiro para</string>
+    <string name="writeDiags">Escrevendo ficheiro Diagnóstico</string>
+    <string name="generatingDiags">Gerando ficheiro Diagnóstico</string>
+    <string name="usingAlternate">Usando pasta alternativa para o ficheiro Diagnóstico</string>
+    <string name="writingHeader">Escrevendo Cabeçalho</string>
+    <string name="writing">"Escrevendo "</string>
+    <string name="errorWriting">Erro ao escrever no ficheiro</string>
+    <string name="aboutDetails">
+O NXTController é um módulo desenvolvido para Android como parte de um protótipo de robô 
+tele-operado.
+O trabalho foi desenvolvido por João Alves (mailto:jpralves@gmail.com) e foi resultado do 
+trabalho de uma tese designada por "Sistema Robótico Móvel Controlado Remotamente via Internet". 
+O código fonte deste trabalho encontra-se publicado no GitHub (https://github.com/jpralves/tourrobot). 
+Além deste módulo existem mais dois módulos que também se encontram também neste repositório.
+Instruções especificas de como usar o protótipo encontram-se descritas no GitHub.</string>
+    <string name="pubSite">"http://jpralves.net/51/</string>
+    <string name="butForward">Frente</string>
+    <string name="butLeft">Esquerda</string>
+    <string name="butRight">Direita</string>
+    <string name="butStop">Parar</string>
+    <string name="Menu">Menu</string>
+    <string name="this_dir">.</string>
+    <string name="parent_dir">..</string>
+    <string name="preferences_title">Preferências</string>
+    <string name="prefs_nxtslave">NXTSlave</string>
+    <string name="prefs_nxtslave_editBrickName">Nome do NXT</string>
+    <string name="prefs_nxtslave_editBrickName_title">Nome do NXT</string>
+    <string name="prefs_nxtslave_motorLeft_title">Motor Esquerdo</string>
+    <string name="prefs_nxtslave_motorRight_title">Motor Direito</string>
+    <string name="prefs_nxtslave_volumetricSensorLeft_title">Volumétrico Esquerdo</string>
+    <string name="prefs_nxtslave_volumetricSensorRight_title">Volumétrico Direito</string>
+    <string name="prefs_nxtslave_volumetricSensorFront_title">Volumétrico Frontal</string>
+    <string name="prefs_nxtslave_touchSensor_title">Sensor de Toque</string>
+    <string name="prefs_nxtslave_colorSensor_title">Sensor de Cor</string>
+    <string name="prefs_nxtslave_nxtBrake_summary">define o modo de travagem</string>
+    <string name="prefs_nxtslave_nxtBrake_title">Travagem</string>
+    <string name="prefs_nxtslave_nxtMotorDirection_title">Direcção do Motor</string>
+    <string name="prefs_nxtslave_nxtSpeed_dialog">Velocidade</string>
+    <string name="prefs_nxtslave_nxtSpeed_text"> graus/seg.</string>
+    <string name="prefs_nxtslave_nxtSpeed_title">Velocidade do NXT</string>
+    <string name="prefs_nxtslave_nxtMinDistance_dialog">Distância mínima de reacção</string>
+    <string name="prefs_nxtslave_nxtMinDistance_text"> cm</string>
+    <string name="prefs_nxtslave_nxtMinDistance_title">Distância mínima</string>
+    <string name="prefs_webserver">Servidor Web</string>
+    <string name="prefs_webserver_webserverPort">Porto do Servidor Web</string>
+    <string name="prefs_webserver_webserverPort_title">Porto do Servidor Web</string>
+    <string name="prefs_webserver_webserverNATPort">Porto NAT do Servidor Web</string>
+    <string name="prefs_webserver_webserverNATPort_title">Porto NAT do Servidor Web</string>
+    <string name="prefs_webserver_webserverPassword">Senha do Servidor Web</string>
+    <string name="prefs_webserver_webserverPassword_title">Senha do Servidor Web</string>
+    <string name="prefs_webserver_isVideoEnabled_summary">habilita a difusão de vídeo</string>
+    <string name="prefs_webserver_isVideoEnabled_title">Vídeo</string>
+    <string name="prefs_webserver_isVideoCaptureEnabled_summary">habilita a captura de vídeo (apenas com vídeo habilitado)</string>
+    <string name="prefs_webserver_isVideoCaptureEnabled_title">Captura de Vídeo</string>
+    <string name="prefs_webserver_jpegCompression_title">nível de compressão JPEG</string>
+    <string name="prefs_webserver_jpegCompression_dialog">nível de compressão JPEG</string>
+    <string name="prefs_webserver_nxtBrowserVersion_summary">Define a versão do NXTBrowser</string>
+    <string name="prefs_webserver_nxtBrowserVersion_title">Versão do NXTBrowser</string>
+    <string name="prefs_webserver_browserRefreshRate_title">Velocidade de Refrescamento do Browser</string>
+    <string name="prefs_webserver_browserRefreshRate_dialog">Velocidade de Refrescamento</string>
+    <string name="prefs_webserver_pubSiteAddress">Endereço de Publicação do Site</string>
+    <string name="prefs_webserver_pubSiteAddress_title">Endereço de Publicação do Site</string>
+    <string name="prefs_webserver_pubsiteKey">Chave de publicação do Site</string>
+    <string name="prefs_webserver_pubsiteKey_title">Chave de publicação do Site</string>
+    <string name="prefs_general">Geral</string>
+    <string name="prefs_general_isSplashEnabled_summary">habilita o SplashScreen inicial</string>
+    <string name="prefs_general_isSplashEnabled_title">SplashScreen</string>
+    <string name="prefs_general_androidButtons_summary">habilita o controlo a partir do ecrã do Android</string>
+    <string name="prefs_general_androidButtons_title">Controlo no Ecrã</string>
+    <string name="prefs_general_textToSpeech_summary">habilita o Text-to-Speech</string>
+    <string name="prefs_general_textToSpeech_title">Text to Speech</string>
+    <string name="prefs_general_locale_title">Idioma da Aplicação</string>
+    <string name="fsbrowser_cantberead">pasta [%1$s] não pode ser lida!</string>
+    <string name="fsbrowser_status_line">Pastas: %1$s, Fich: %2$s, Tam: %3$s</string>
+    <string name="fsbrowser_openfile">Deseja abrir o ficheiro?</string>
+    <string name="fsbrowser_action">Acção</string>
+    <string name="sensorservice_started">Serviço de Sensores Iniciado...</string>
+
+</resources>

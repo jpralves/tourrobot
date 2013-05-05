@@ -1,0 +1,172 @@
+<!DOCTYPE HTML SYSTEM>
+<html>
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=windows-1252">
+<title>NXTBrowser</title>
+<link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="video.js"></script>
+<script type="text/javascript" src="jquery.timer.js"></script>
+</head>
+<body>
+	<H3>NXTBrowser by Joao Alves</H3>
+	<table border="1" class="ui-widget ui-corner-all">
+		<tbody class="ui-widget-content">
+			<tr>
+				<td>
+					<div style="position: relative">
+						<img id="leftvol" src="green.png" width="160" height="120"
+							border="0" alt=""><img id="rightvol" src="yellow.png"
+							width="160" height="120" border=0 alt=""><br> <img
+							src="anim.gif" width="160" height="188" alt="" border=0
+							style="position: relative; top: -60; left: 80;">
+						<div style="position: absolute; top: 10; left: 10;">
+							<span id="nxt_leftvolsensor">-</span>
+						</div>
+						<div style="position: absolute; top: 10; right: 10;">
+							<span id="nxt_rightvolsensor">-</span>
+						</div>
+
+						<div style="position: absolute; bottom: 10; left: 10;">
+							<span id="nxt_lefttacho">0</span>
+						</div>
+						<div style="position: absolute; bottom: 10; right: 10;">
+							<span id="nxt_righttacho">0</span>
+						</div>
+
+					</div>
+				<td rowspan="2">
+					<ul>
+						<li>Battery NXT: <span id="nxt_battery">-</span></li>
+						<li>Color Sensor: <span id="nxt_colorsensor">-</span></li>
+						<li>Touch Sensor: <span id="nxt_touchsensor">-</span></li>
+						<li>Android Date/Time: <span id="android_datetime">-</span></li>
+						<li>Battery Android: <span id="android_battery">-</span></li>
+						<li>Wifi Android: <span id="android_wifi">-</span></li>
+						<li>Wifi BSSID: <span id="android_wifibssid">-</span></li>
+						<li>Wifi Speed: <span id="android_wifispeed">-</span></li>
+						<li>DEBUG Counter: <span id="debug_counter">-</span></li>
+					</ul>
+					<H2>
+						SCORE: <span id="score">-</span>
+					</H2>
+				</td>
+				<td rowspan="2">
+								<div
+					style="position: relative; left: 0; top: 0; width: 240; height: 320">
+					<img id="img1" src="shot.jpg"
+						style="position: absolute; top: 0; right: 0;" width="240" height="320"
+						alt=""> <img id="img2" src="shot.jpg"
+						style="position: absolute; top: 0; right: 0;" width="240" height="320"
+						alt="">
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<button class="ui-corner-all" id="goleft">Left</button>
+					<button class="ui-corner-all" id="goforward">Forward</button>
+					<button class="ui-corner-all" id="goright">Right</button>
+					<p>
+						<button class="ui-corner-all" id="stop">Stop</button>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var errorcounter = 0;
+		var debug_counter = 0;
+
+		$('#goleft').on('click', function() {
+			$.get("command.cgi", {
+				action : "left"
+			}, function(data) {
+				//alert("Data Loaded: " + data);
+			});
+			//alert('Left');
+		});
+
+		$('#goright').on('click', function() {
+			$.get("command.cgi", {
+				action : "right"
+			}, function(data) {
+				//alert("Data Loaded: " + data);
+			});
+			//alert('Right');
+		});
+
+		$('#goforward').on('click', function() {
+			$.get("command.cgi", {
+				action : "forward"
+			}, function(data) {
+				//alert("Data Loaded: " + data);
+			});
+			//alert('Forward');
+		});
+
+		$('#stop').on('click', function() {
+			$.get("command.cgi", {
+				action : "stop"
+			}, function(data) {
+				//alert("Data Loaded: " + data);
+			});
+			//alert('Stop');
+		});
+
+		var timer = $.timer(function() {
+			$.getJSON("info.json", function(jd, status, jqXHR) {
+				//alert("success");
+				//$('#dialog').dialog(); 
+				$("#nxt_battery").text(jd.nxt.battery);
+				$("#nxt_speed").text(jd.nxt.speed);
+				$("#nxt_colorsensor").text(jd.nxt.colorsensor);
+				$("#nxt_touchsensor").text(jd.nxt.touchsensor);
+				$("#nxt_leftvolsensor").text(jd.nxt.leftvolsensor + ' cm');
+				$("#nxt_rightvolsensor").text(jd.nxt.rightvolsensor + ' cm');
+				$("#nxt_lefttacho").text(jd.nxt.lefttacho);
+				$("#nxt_righttacho").text(jd.nxt.righttacho);
+
+				updatevolsensors(jd.nxt.leftvolsensor, jd.nxt.rightvolsensor);
+				$("#android_datetime").text(jd.android.datetime);
+				$("#android_battery").text(jd.android.battery);
+				$("#android_wifi").text(jd.android.wifi);
+				$("#android_wifispeed").text(jd.android.wifispeed);
+				$("#android_wifibssid").text(jd.android.bssid);
+				$("#score").text(jd.android.score);
+				$("#debug_counter").text(debug_counter++);
+				//$("#dump").text(jqXHR.responseText);
+			}).success(function() {
+				processVideo();
+			}).error(function() {
+				errorcounter++;
+			}).complete(function() {
+			});
+		});
+
+		initVideo();
+		
+		timer.set({
+			time : 2000,
+			autostart : true
+		});
+
+		function updatevolsensors(l, r) {
+			setsensor('leftvol', l);
+			setsensor('rightvol', r);
+		}
+
+		function setsensor(base, value) {
+			if (value > 80) {
+				$("#" + base).attr("src", "green.png");
+			} else if (value > 40) {
+				$("#" + base).attr("src", "yellow.png");
+			} else if (value > 0) {
+				$("#" + base).attr("src", "red.png");
+			}
+		}
+	</script>
+</body>
+</html>

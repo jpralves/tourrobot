@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules" default="debug">
+<target name="-pre-build">
+	<exec executable="/bin/bash">
+		<arg value="increment-version.sh"/>
+		<arg value="AndroidManifest.xml"/>
+	</exec>
+<xpath input="AndroidManifest.xml" expression="/manifest/@android:versionName" output="current-version-name" />
+        <xpath input="AndroidManifest.xml" expression="/manifest/@android:versionCode" output="current-version-code" />
+	<echo>Incremented version build to ${current-version-code}</echo>
+</target>
+</project>

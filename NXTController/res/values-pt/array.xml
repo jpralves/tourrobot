@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="listSensorArray">
+        <item>N/D</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+        <item>S4</item>
+    </string-array>
+    <string-array name="listMotorDirectionArray">
+        <item>Normal</item>
+        <item>Invertido</item>
+    </string-array>
+    <string-array name="listNXTBrowserLayout">
+        <item>Original</item>
+        <item>Moderna</item>
+    </string-array>
+
+</resources>
